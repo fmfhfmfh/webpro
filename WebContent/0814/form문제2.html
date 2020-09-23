@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		// name을 이용해서 접근	
+	
+		vname = document.ff.name.value;
+		vgender = document.ff.gender.value;
+		
+		vhobby = document.ff.hobby;
+		
+		res = "이름 : " + vname + "\n";
+		res += "성별 : " + vgender + "\n";
+		res += "취미 : " ;
+		for (i = 0; i < vhobby.length; i++) {
+// 			console.log(vhobby[i].checked);
+			if(vhobby[i].checked){
+				res += vhobby[i].value + " ";
+			}
+		}
+		document.ff.area.value = res;
+	}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>form 문제 2</h3>
+	<br>
+	<form name="ff">
+	이름 : <input type="text" name="name"><br>
+	성별 : <input type="radio" value="남자" name="gender" checked>남자
+		  <input type="radio" value="여자" name="gender">여자
+		  <br>
+	취미 : <input type="checkbox" value="축구" name="hobby">축구
+		 <input type="checkbox" value="야구" name="hobby">야구
+		 <input type="checkbox" value="농구" name="hobby">농구
+		 <input type="checkbox" value="영화" name="hobby">영화
+		 <input type="checkbox" value="독서" name="hobby">독서
+		 <input type="checkbox" value="게임" name="hobby" checked=checked>게임
+	<br>
+	<input type="button" value="결과출력" onclick="proc1()">
+	<br><br>
+	
+	<textarea name="area" rows="10" cols="60"></textarea>
+	</form>
+</div>
+</body>
+</html>

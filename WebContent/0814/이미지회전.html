@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	img{
+		width : 100px;
+		height : 100px;
+	}
+</style>
+<script>
+	window.onload = function(){
+		end.style.display = "none";
+	}
+	
+	function proc1(){
+		abcd = document.querySelector("#result1");
+		
+		end.style.display ="inline";
+		
+		
+		a = setInterval(function(){
+			// result1에서 첫번째 요소를 선택한다
+			fc = abcd.firstChild;
+			// result1에 선택한 첫번째 요소를 추가한다
+			abcd.appendChild(fc);
+			
+		},500);
+		start.style.display = "none";
+	}
+	
+	function proc2(){
+		
+		start.style.display = "inline";
+		clearInterval(a);
+		end.style.display = "none";
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>1. 이미지회전</h3>
+	1초마다 한번씩 맨 처음 이미지를 마지막으로 옮긴다<br>
+	첫번째 이미지를 선택 : firstChild<br>
+	result1에 추가한다 : appendChild()<br>
+	기존에 이미 존재하는 요소를 추가하면 기존의 요소는 삭제된다 - 잘라내기/붙여넣기<br>
+	<input type="button" value="확인" onclick="proc1()" id="start">
+	<input type="button" value="종료" onclick="proc2()" id="end">
+	<br><br>
+	<div id="result1">
+		<img src="../images/대나무숲.jpg">
+		<img src="../images/배그.jpg">
+		<img src="../images/롤.jpg">
+		<img src="../images/스포츠.jpg">
+		<img src="../images/솔져.jpeg">
+		<img src="../images/야스오.jpg">
+		<img src="../images/에땁.jpg">
+	</div>
+</div>
+</body>
+</html>

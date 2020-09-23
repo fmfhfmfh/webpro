@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	img{
+		width : 100px;
+		height : 100px;
+	}
+	#end{
+		display : none;
+	}
+	table{
+		border : 1px solid blue;
+	}
+	td{
+		width : 200px;
+		height : 40px;
+		text-align : center;
+	}
+	#com{ 
+		background-color : red;
+	}
+	#user{
+		background-color : yellow;
+	}
+	#userinput{
+		width : 99%;
+		height : 99%;
+		
+	}
+	#cominput{
+		width : 99%;
+		height : 99%;
+	}
+	
+</style>
+<script type="text/javascript">
+	arr = ["가구1.jpg", "뱅쇼.jpg", "배그.jpg", "아메리카노.jpg", "야스오.jpg", "오버워치메이.jpg", "카카오_라이언.jpg" ];
+	
+	window.onload = function(){
+		// 아이디가 start 버튼요소 검색
+		st = document.getElementById('start');
+		// 아이디가 end 버튼요소 검색
+		ed = document.getElementById('end');
+	}
+	function proc1(){
+		
+		// 확인버튼 사라지고 종료버튼
+		st.style.display = "none";
+		ed.style.display = "inline";
+		
+		a = setInterval(function(){
+			// 랜덤발생
+			ran = Math.floor(Math.random()*arr.length);
+			
+			// 이미지선택
+			pho = document.getElementById('img1')
+			
+			//#img1인 요소의 src를 변경
+			pho.src="../images/"+ arr[ran];
+			
+		}, 1000)
+	}
+
+	function proc2(){
+		
+		// 종료버튼 사라진다
+		ed.style.display = "none";
+		// 확인버튼 보인다
+		st.style.display = "inline";
+		// a 종료
+		clearInterval(a);
+	}
+	
+	function proc3(){
+		userinput = prompt("가위 바위 보를 입력해주세요.");
+		
+		img = document.getElementById('userinput');
+		if(userinput == "가위"){
+			img.src="../images/가위_좌.png"
+		}else if(userinput == "바위"){
+			img.src="../images/바위_좌.png"
+		}else if(userinput == "보"){
+			img.src="../images/보_좌.png"
+		}
+		
+		
+		oper = ["가위", "바위", "보"];
+		
+		// 랜덤발생
+		ran = Math.floor(Math.random()*oper.length);
+		
+		cominput = oper[ran];
+
+		ima = document.getElementById('cominput');
+		if(cominput == "가위"){
+			ima.src="../images/가위_우.png"
+		}else if(cominput == "바위"){
+			ima.src="../images/바위_우.png"
+		}else if(cominput == "보"){
+			ima.src="../images/보_우.png"
+		}
+		
+		res = "결과는 ";
+		if(cominput == userinput){
+			res += "비김"
+		}else if(cominput == "가위" && userinput == "바위" || cominput == "바위" && userinput == "보" || cominput == "보" && userinput == "가위"){
+			res += "사용자 승리";
+		}else{
+			res += "컴퓨터 승리";
+		}
+		
+		document.querySelector("#result").innerHTML = res;
+		
+	}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>1. 이미지변경</h3>
+	버튼을 클릭하면 1초 간격을 이미지를 변경<br>
+	이미지 배열을 이용<br>
+	랜덤을 이용해서 이미지를 선택<br>
+	<br>
+	<br>
+	<input id="start" type="button" value="확인" onclick="proc1()">
+	<input id="end" type="button" value="종료" onclick="proc2()">
+	<br><br>
+	<div id="result1">
+		<img src="../images/대나무숲.jpg" id="img1" alt="이미지1">
+	</div>
+</div>
+
+<div class="box">
+	<h3>2. 가위바위보</h3>
+	컴퓨터는 랜덤으로 결정<br>
+	사용자는 입력<br>
+	가위바위보에 맞는 이미지를 변경<br>
+	<br>
+	<br>
+	<table border="1">
+		<tr>
+			<td colspan="2">
+			<input id="start" type="button" value="게임시작" onclick="proc3()">
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="user">사용자</td>
+			<td id="com">컴퓨터</td>
+		</tr>
+		
+		<tr>
+			<td>
+			<img src="../images/가위_좌.png" id="userinput" alt="user입력">
+			</td>
+			<td>
+			<img src="../images/가위_우.png" id="cominput" alt="com입력">
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" id="result"></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

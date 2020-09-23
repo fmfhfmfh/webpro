@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		
+		regNo = prompt("주민등록번호를 입력해주세요");
+		
+		// 생년월일
+		year = regNo.substring(0,2);
+		month = regNo.substring(2,4);
+		day = regNo.substring(4,6);
+		
+		// 성별
+		gend = regNo.charAt(7);
+		
+		
+		if(gend == 3 || gend == 4){
+			yy = "20" + year;
+		}else {
+			yy = "19" + year;
+		}
+		
+		if(gend == 1 || gend == 3) {
+			gender = "남자";
+		}else if(gend == 2 || gend == 4) {
+			gender = "여자";
+		}
+		
+		// 나이구하기
+		// 현재년도 - 태어난년도 + 1
+		now = new Date();
+		age = now.getFullYear() - parseInt(yy) + 1;
+		
+		res = "주민등록번호 : " + regNo + "<br>";
+		res += "생년월일 : " + yy + "년 " + month + "월 " + day + "일 " + "<br>";
+		res += "성별 : " + gender + "<br>";
+		res += "나이 : " + age + "<br>";
+
+		document.getElementById('result1').innerHTML = res;
+	}
+	
+	function proc2(){
+		str = "234567892345";
+		
+		regNo = prompt("주민등록번호를 입력해주세요", "123456-2345678");
+		regNoarr = regNo.split("-"); // 배열로 반환
+		
+		regNo = regNoarr[0].concat(regNoarr[1]);
+		
+		console.log("regNo = " + regNo);
+		console.log("regNo.length = " + regNo.length);
+		
+		sum = 0;
+		for (i = 0; i < regNo.length-1; i++) {
+			sum += regNo[i] * str.substr(i, 1);
+		}
+		
+		value = 11 - (sum % 11);
+		value = value % 10;
+		
+		res = "입력 : " + regNoarr[0] + "<br>";
+		if(value == regNo[regNo.length-1]){
+			res += "올바른 번호";
+		}else{
+			res += "올바르지 않은 번호";
+		}
+		document.querySelector("#result2").innerHTML = res;
+	}
+
+</script>
+</head>
+<body>
+
+<div class="box">
+	<h3>주민등록번호 출력</h3>
+	<br>
+	<input type="button" value="출력" onclick="proc1()">
+	<br><br>
+	<div id="result1"></div>
+</div>
+
+<div class="box">
+	<h3>주민등록번호 유효성검사</h3>
+	<br>
+	<input type="button" value="출력" onclick="proc2()">
+	<br><br>
+	<div id="result2"></div>
+</div>
+</body>
+</html>

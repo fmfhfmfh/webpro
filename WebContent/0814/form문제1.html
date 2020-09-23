@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	#dd{
+		width : 100px;
+		height : 50px;
+	}
+	select{
+		width : 100%;
+		height : 100%;
+	}
+</style>
+
+<script type="text/javascript">
+	function proc1(){
+		vdan = document.gg.gugu.value;
+		
+		res = vdan + "단" + "\n";
+		for (i = 1; i < 10; i++) {
+			res += vdan + " * " + i + " = " + vdan * i + "\n";
+		}
+		document.getElementById('con').innerHTML = res;
+	}
+
+</script>
+
+</head>
+<body>
+
+<div class="box">
+	<h3>1. 구구단 value</h3>
+	<br>
+	<form name="gg">
+	<input id="dan" type="text" name="gugu">단
+	<input type="button" value="출력" onclick="proc1()">
+	<br><br>
+	<textarea id="con" name="sel" rows="10" cols="20">
+	</textarea>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	header{
+		background : lightgray;
+		margin : 10px;
+	}
+	nav{
+		color : blue;
+		font-weight : bold;
+		text-align : center;
+		border-top : 1px dotted green; 
+		border-bottom : 1px solid green; 
+		margin-bottom : 5px;
+	}
+	#u1 li{
+		margin : 10px;
+		padding : 10px;
+		letter-spacing : 10px;
+		display : inline;
+	}
+	#left{
+		background : #CEFBC9;
+		width : calc(14% - 1%);
+		float : left;
+		height : 635px;
+	}
+	#right{
+		background : #FAF4C0;
+		width : calc(14% - 1%);
+		height : 635px;
+		float : left;
+		padding-left : 20px;
+	}
+	section{
+		width : calc(71% - 1%);
+		height : 635px;
+		float : left;
+	}
+	footer{
+		background : black;
+		height : 115px;
+		clear : both;
+		text-align : center;
+		color : white;
+		font-size : 20px;
+	}
+	#left div{
+		height : 60px;
+		padding-left : 15px;
+		color : white;
+	}
+	#u1 li{
+		padding : 30px;
+	}
+	#left h2{
+		padding-left : 20px;
+	}
+	iframe{
+		width : 100%;
+		height : 100%;
+	}
+	div{
+		height : 300px;
+	}
+	#box{
+		width : 1890px;
+		height : 900px;
+	}
+	img{
+		width : 300px;
+		height : 80px; 
+		padding-left : 200px;
+	}
+</style>
+</head>
+<body>
+<div id="box">
+
+<header>
+<h2><img src="../images/멍멍이.png" alt="멍멍이">스피드 컴 Shopping</h2>
+</header>
+<nav>
+	<ul id="u1">
+		<li><a href="../0723/main.html">HOME</a></li>
+		<li>SHOPPING ABOUT</li>
+		<li>NEWS</li>
+		<li>MY ACCOUNT</li>
+		<li>CONTACTS</li>
+	</ul>
+</nav>
+<aside id="left">
+	<h2>카테고리</h2>
+	<div>
+	<hr>	
+	<a href="../0723/리그오브레전드.html" target="ifr">리그오브레전드</a>
+	<hr>
+	<a href="../0723/배틀그라운드.html" target="ifr">배틀그라운드</a>
+	<hr>
+	<a href="../0723/피파온라인4.html" target="ifr">피파온라인4</a>
+	<hr>
+	<a href="../0723/오버워치.html" target="ifr">오버워치</a>
+	<hr>
+	<a href="../0723/발로란트.html" target="ifr">발로란트</a>
+	<hr>
+	<a href="../0723/카트라이더.html" target="ifr">카트라이더</a>
+	<hr>
+	<a href="../0723/사무용.html" target="ifr">사무용</a>
+	<hr>
+	</div>
+</aside>
+<section>
+<iframe src="../0723/기본.html" name="ifr">
+</iframe>
+</section>
+<aside id="right">
+<div>
+<h2>Shopping Cart</h2>
+<p>현재 쇼핑카트에 물품이 없습니다</p>
+<a href="../0723/쇼핑카트.html" target="ifr">쇼핑카트 보기</a>
+</div>
+
+<h3>Log In</h3>
+
+<form action="../0723/로그인.jsp"  method="post" target="ifr">
+<p>아이디</p>
+<input type="text" name="id"><br>
+<p>비밀번호</p>
+<input type="text" name="pass"><br>
+<input type=submit value="로그인">
+</form>
+<a href="../0723/회원가입.html" target="ifr"><input type=button value="회원가입"></a>
+</aside>
+<footer>
+<br><br>
+Copyright (c)2020 Park
+</footer>
+</div>
+</body>
+</html>

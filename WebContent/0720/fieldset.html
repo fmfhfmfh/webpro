@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href = "../css/public.css">
+</head>
+<style>
+	filedset{
+		width : 80%;	
+	}
+	label{
+		display : inline-block;
+		width : 100px;
+		height : 40px;
+	}
+	#set{
+		
+		border : 2px solid blue;
+		padding : 18px;
+	}
+	
+	
+	
+</style>
+<body>
+<pre>
+	작성팁
+	filedset : 입력 항목들의 그룹평
+	legend : fieldset의 제목
+	label : 일반문자, 문자의 길이를  같게 하기 위해서 사용
+	 -label 요소가 인라인 요소이기떄문에 
+	 display : inline-block 의 형태로 스타일을 지정해야만 
+	 가로 세로 길이를 설정 할 수 있다.
+	
+	
+</pre>
+	<form>
+		<fieldset>
+			<legend>인적사항</legend>
+		
+			<label>이름</label>
+			<input type = "text"><br>
+		
+			<label>전화번호</label>
+			<input type = "text"><br>
+		</fieldset>
+		
+		<br>
+		
+		<fieldset>
+			<legend>경력사항</legend>
+			<label>이메일</label>
+			<input type = "text"><br>
+		
+			<label>생일</label>
+			<input type = "date"> <br>
+		</fieldset>
+		
+	</form>
+	
+	<h2>이메일 전송 화면</h2>
+	 
+	<form action="emailtest.jsp" method="post">
+	<fieldset id = "set">
+	<label>이름</label>
+	<input type = "text" name="name"><br>
+	<label>이메일</label>
+	<input type = "text" name="email"><br>
+	<label>내용</label><br>
+	<textarea name = "area" rows="10" cols="60"></textarea> <br>
+	<input type = "submit" value="전송">
+	<input type = "reset" value="재설정">
+	</fieldset>
+	
+	</form>
+	<hr>
+	
+	<h2>회원가입 화면</h2>
+	
+	<form action="createtest.jsp" method="post">
+	<fieldset id="set">
+	<label>이름</label>
+		<input type="text" name="name"><br>
+	<label>주소</label>
+		<input type="text" name="addr"><br>
+	<label>이메일</label>
+		<input type="text" name="email"><br>
+		<input type = "radio" value = "남자" name = "gender">Male<br>	 
+		<input type = "radio" value = "여자" name = "gender">Female<br>
+		<input type = "submit" value="send">
+		<input type = "reset" value="원래대로">
+	</fieldset>
+	</form>
+	
+	
+	
+	
+</body>
+</html>

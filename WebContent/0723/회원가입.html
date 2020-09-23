@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width : 600px;
+		height : 600px;
+		text-align : center;
+		border : 1px solid blue;
+		margin : auto;
+		background-image : linear-gradient(to right, #CEFBC9, #FAF4C0)
+	}
+	h2{
+		font-weight : blod;
+		color : gray;
+	}
+	img{
+		width : 98%;
+		height : 98%;
+		position : absolute;
+		z-index : -1;
+	}
+	
+</style>
+</head>
+<body>
+<img src="../images/해변.jpg" alt="해변">
+<div>
+<form>
+	<h2>회 원 가 입</h2>
+	<p>아이디 : <input type="text" name="id"><button type="button" onclick="alert('사용가능한 아이디입니다')">중복검사</button></p><br>
+	<p>이름   : <input type="text" name = "name"></p><br>
+	<input type = "radio" value = "남자" name = "gender">남자	 
+	<input type = "radio" value = "여자" name = "gender">여자<br>
+	<p>비밀번호 : <input type="password" name="pass"></p><br>
+	<p>전화번호 : <input type="text" name="tel"></p><br>
+	<p>이메일 : <input type="text" name="email"></p><br> 
+	<p>생일 : <input type="date" name="birth"></p><br>
+	<input type="button" value="가입하기" onclick="alert('회원가입 완료')">
+	<input type="reset" value="초기화">
+</form>
+</div>	
+</body>
+</html>
